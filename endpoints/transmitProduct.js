@@ -1,12 +1,6 @@
 module.exports = function (databaseConnection, http, loggingHandler) {
   http.post("/services/textdb/post", async (req, res) => {
-      let product = {
-          issueAt: req.body.issueAt,
-          expireAt: req.body.expireAt,
-          vtecString: req.body.expireAt,
-          locationData: req.body.locationData,
-          raw: req.body.raw,
-      }
+      let product = req.body;
       await databaseConnection.query(
           `INSERT INTO "products" ("issueAt", "expireAt", "vtecString", "locationData", "raw")  
              VALUES ($1, $2, $3, $4, $5)`, [product.issueAt, product.expireAt, product.vtecString,

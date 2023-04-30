@@ -2,6 +2,7 @@ const express = require("express");
 const postgres = require("pg");
 const morgan = require("morgan");
 const logging = require("./helpers/loggingHelper");
+const bodyParser = require('body-parser');
 
 const http = express();
 const databaseClient = new postgres.Client({
@@ -13,6 +14,8 @@ const databaseClient = new postgres.Client({
 });
 
 http.use(morgan("combined"));
+http.use(bodyParser.urlencoded({ extended: true }));
+http.use(bodyParser.json());
 
 http.set("trust proxy", true);
 
