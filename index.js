@@ -2,7 +2,7 @@ const express = require("express");
 const postgres = require("pg");
 const morgan = require("morgan");
 const logging = require("./helpers/loggingHelper");
-const bodyParser = require('body-parser');
+const bodyParser = require("body-parser");
 
 const http = express();
 const databaseClient = new postgres.Client({
@@ -45,6 +45,14 @@ http.get("/", (req, res) => {
     requestAddress: req.ip,
   });
 });
+
+// Establish a 404 route
+http.all("*", (req, res) => {
+  return res.json({
+    code: 404,
+    requestAddress: req.ip,
+  })
+})
 
 http.listen(9101, () => {
   logging.write("info", `Listening on port 9101.`);
