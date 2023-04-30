@@ -1,5 +1,5 @@
 module.exports = function (databaseConnection, http, loggingHandler) {
-  http.post("/services/textdb/push", async (req, res) => {
+  http.post("/services/textdb/post", async (req, res) => {
       let product = {
           issueAt: req.body.issueAt,
           expireAt: req.body.expireAt,
