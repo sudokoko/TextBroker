@@ -18,7 +18,7 @@ module.exports = function (databaseConnection, http, loggingHandler) {
                       "info",
                       `Storing text product with VTEC String (${product.vtecString ?? "NO VTEC"})`
                   );
-                  return res.json(queryResponse.rows[0]);
+                  return res.json({code:200, message:"Product stored in TextDB successfully.", product: queryResponse.rows[0]});
               }
           }
       );
