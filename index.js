@@ -48,7 +48,7 @@ http.get("/", (req, res) => {
 
 // Establish a 404 route
 http.all("*", (req, res) => {
-  return res.json({
+  return res.status(404).json({
     code: 404,
     requestAddress: req.ip,
   })
