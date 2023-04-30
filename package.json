@@ -1,0 +1,24 @@
+{
+  "name": "textbroker",
+  "version": "1.0.0",
+  "description": "Software package providing text product transaction endpoints for SWIC offices.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sudokoko/TextBroker.git"
+  },
+  "author": "sudokoko",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sudokoko/TextBroker/issues"
+  },
+  "homepage": "https://github.com/sudokoko/TextBroker#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "pg": "^8.10.0"
+  }
+}
