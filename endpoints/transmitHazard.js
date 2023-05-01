@@ -1,5 +1,5 @@
 module.exports = function (databaseConnection, http, loggingHandler) {
-  http.post("/services/textdb/post", async (req, res) => {
+  http.post("/services/hazard/post", async (req, res) => {
     let {
       utc_issue,
       utc_update,

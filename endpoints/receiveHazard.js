@@ -1,5 +1,5 @@
 module.exports = function (databaseConnection, http, loggingHandler) {
-  http.get("/services/textdb/get/:identifier", async (req, res) => {
+  http.get("/services/hazard/get/:identifier", async (req, res) => {
       await databaseConnection.query(
           `SELECT * FROM public.products WHERE identifier = ${req.params.identifier}`,
           (queryError, queryResponse) => {

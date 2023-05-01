@@ -33,8 +33,8 @@ databaseClient.connect((connectError) => {
 });
 
 // Link endpoints to main
-require("./endpoints/retrieveProduct")(databaseClient, http, logging);
-require("./endpoints/transmitProduct")(databaseClient, http, logging);
+require("./endpoints/receiveHazard")(databaseClient, http, logging);
+require("./endpoints/transmitHazard")(databaseClient, http, logging);
 
 // Establish a base route
 http.get("/", (req, res) => {
