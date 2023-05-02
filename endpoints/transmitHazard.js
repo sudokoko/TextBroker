@@ -11,11 +11,12 @@ module.exports = function (databaseConnection, http, loggingHandler) {
       event_color,
       event_name,
       headline,
+      text,
     } = req.body;
     await databaseConnection.query(
       `INSERT INTO "products" ("utc_issue", "utc_update", "utc_expire", "wfo", "phenomena", "significance", "ugc",
-                                "event_color", "event_name", "headline")  
-             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10)`,
+                                "event_color", "event_name", "headline", "text")  
+             VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`,
       [
         utc_issue,
         utc_update,
@@ -27,6 +28,7 @@ module.exports = function (databaseConnection, http, loggingHandler) {
         event_color,
         event_name,
         headline,
+        text,
       ],
       (queryError, queryResponse) => {
         if (queryError) {
